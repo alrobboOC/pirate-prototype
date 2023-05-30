@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/check-answers" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="crime-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What are your pirate crimes?
+              </h1>
+            </legend>
+            <div id="crime-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime" name="crime" type="checkbox" value="drunk">
+                <label class="govuk-label govuk-checkboxes__label" for="crime">
+                  Drink and disorderly
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-2" name="crime" type="checkbox" value="rum">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-2">
+                  Rum smuggling
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-3" name="crime" type="checkbox" value="parrot">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-3">
+                  Carrying a parrot without a license
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-4" name="crime" type="checkbox" value="eyepatch">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-4">
+                  Wearing a fake eyepatch
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-5" name="crime" type="checkbox" value="treasure">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-5">
+                  Burying treasure on private property
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-6" name="crime" type="checkbox" value="tom-hanks">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-6">
+                  Holding Tom Hanks hostage
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
