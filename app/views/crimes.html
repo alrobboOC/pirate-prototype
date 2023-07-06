@@ -60,7 +60,7 @@
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="crime-6" name="crime" type="checkbox" value="tom-hanks">
+                <input class="govuk-checkboxes__input" id="crime-6" name="crime" type="checkbox" value="Tom Hanks">
                 <label class="govuk-label govuk-checkboxes__label" for="crime-6">
                   Holding Tom Hanks hostage
                 </label>
@@ -74,7 +74,32 @@
         }) }}
 
       </form>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          How it works
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <code class="language-html">
+            router.post('/beard', function (req, res) {
 
+              // Make a variable and give it the value from 'how-many-balls'
+          var beard = req.session.data['beard']
+
+              // Check whether the variable matches a condition
+              if (beard == "yes"){
+                // Send user to next page
+                res.redirect('/crimes')
+              } else {
+                // Send user to ineligible page
+                res.redirect('/fake-beard')
+              }
+
+            })
+        </code>
+        </div>
+      </details>
     </div>
   </div>
 
