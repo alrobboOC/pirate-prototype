@@ -1,6 +1,35 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
+ pre code {
+    display: block;
+    max-width: 38em;
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+    border: 3px solid rgba(0,0,0,0);
+    outline: 1px solid #b1b4b6;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+
+code {
+  font-family: MyFancyCustomFont, monospace;
+  font-size: inherit;
+}
+
+.app-example__code {
+    position: relative;
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+}
