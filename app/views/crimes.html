@@ -30,37 +30,37 @@
             </div>
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="crime" name="crime" type="checkbox" value="drunk">
+                <input class="govuk-checkboxes__input" id="crime" name="crime" type="checkbox" value="Drunk and disorderly">
                 <label class="govuk-label govuk-checkboxes__label" for="crime">
-                  Drink and disorderly
+                  Drunk and disorderly
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="crime-2" name="crime" type="checkbox" value="rum">
+                <input class="govuk-checkboxes__input" id="crime-2" name="crime" type="checkbox" value="Rum smuggling">
                 <label class="govuk-label govuk-checkboxes__label" for="crime-2">
                   Rum smuggling
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="crime-3" name="crime" type="checkbox" value="parrot">
+                <input class="govuk-checkboxes__input" id="crime-3" name="crime" type="checkbox" value="Carrying a parrot without a license">
                 <label class="govuk-label govuk-checkboxes__label" for="crime-3">
                   Carrying a parrot without a license
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="crime-4" name="crime" type="checkbox" value="eyepatch">
+                <input class="govuk-checkboxes__input" id="crime-4" name="crime" type="checkbox" value="Wearing a fake eyepatch">
                 <label class="govuk-label govuk-checkboxes__label" for="crime-4">
                   Wearing a fake eyepatch
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="crime-5" name="crime" type="checkbox" value="treasure">
+                <input class="govuk-checkboxes__input" id="crime-5" name="crime" type="checkbox" value="Burying treasure on private propertye">
                 <label class="govuk-label govuk-checkboxes__label" for="crime-5">
                   Burying treasure on private property
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="crime-6" name="crime" type="checkbox" value="Tom Hanks">
+                <input class="govuk-checkboxes__input" id="crime-6" name="crime" type="checkbox" value="Holding Tom Hanks hostage">
                 <label class="govuk-label govuk-checkboxes__label" for="crime-6">
                   Holding Tom Hanks hostage
                 </label>
@@ -86,21 +86,22 @@
 
 
         <pre>  <code markup="tt" class="language-javascript">
-            router.post('/beard', function (req, res) {
 
-              // Make a variable and give it the value from 'how-many-balls'
-          var beard = req.session.data['beard']
+//Checkboxes
 
-              // Check whether the variable matches a condition
-              if (beard == "yes"){
-                // Send user to next page
-                res.redirect('/crimes')
-              } else {
-                // Send user to ineligible page
-                res.redirect('/fake-beard')
-              }
-
-            })
+// Run this code when a form is submitted to 'about-children-answer'
+router.post('/about-children-answer', function (req, res) {
+// Make a variable and give it the value from 'howmanychildren'
+var howmanychildren = req.session.data['nochildren']
+// Check whether the variable matches a condition
+if (howmanychildren == "no-children"){
+  // Send user to next page
+  res.redirect('/private-beta/v2/bereavement-support-payment/nochildren-not-eligible')
+} else {
+  // Send user to ineligible page
+  res.redirect('/private-beta/v2/bereavement-support-payment/country')
+}
+})
         </code>
       </pre>
         </div>
