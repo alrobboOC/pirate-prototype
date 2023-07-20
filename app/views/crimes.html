@@ -12,6 +12,8 @@
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -84,7 +86,8 @@
           <p class="govuk-body" target="_blank">You can find the HTML for <a href="https://design-system.service.gov.uk/components/checkboxes/">checkboxes component in the design system.</a>
 
 
-
+            <p> Copy the javascript and put it into your <code markup="tt" class="language-javascript">routes.js</code> file.
+            <p>Make sure the form  <code markup="tt" class="language-javascript">action</code> in the HTML and name of the  <code markup="tt" class="language-javascript">function</code> are the same.
         <pre>  <code markup="tt" class="language-javascript">
 
 //Checkboxes
@@ -108,5 +111,8 @@ if (howmanychildren == "no-children"){
       </details>
     </div>
   </div>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script type="text/javascript">
+  hjjs.highlightAll();
+</script>
 {% endblock %}
