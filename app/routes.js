@@ -9,20 +9,5 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 
-// Add your routes here
-
-router.post('/beard', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var beard = req.session.data['beard']
-
-  // Check whether the variable matches a condition
-  if (beard == "yes"){
-    // Send user to next page
-    res.redirect('/crimes')
-  } else {
-    // Send user to ineligible page
-    res.redirect('/fake-beard')
-  }
-
-})
+router.use('/verison-1/', require('./views/verison-1/_routes'));
+router.use('/verison-2/', require('./views/verison-2/_routes'));

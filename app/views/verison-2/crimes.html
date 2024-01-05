@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-answers" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="crime-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What are your pirate crimes?
+              </h1>
+            </legend>
+            <div id="crime-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime" name="crime" type="checkbox" value="Drunk and disorderly">
+                <label class="govuk-label govuk-checkboxes__label" for="crime">
+                  Drunk and disorderly
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-2" name="crime" type="checkbox" value="Rum smuggling">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-2">
+                  Rum smuggling
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-3" name="crime" type="checkbox" value="Carrying a parrot without a license">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-3">
+                  Carrying a parrot without a license
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-4" name="crime" type="checkbox" value="Wearing a fake eyepatch">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-4">
+                  Wearing a fake eyepatch
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-5" name="crime" type="checkbox" value="Burying treasure on private propertye">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-5">
+                  Burying treasure on private property
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="crime-6" name="crime" type="checkbox" value="Holding Tom Hanks hostage">
+                <label class="govuk-label govuk-checkboxes__label" for="crime-6">
+                  Holding Tom Hanks hostage
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          How it works
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body" target="_blank">You can find the HTML for <a href="https://design-system.service.gov.uk/components/checkboxes/">checkboxes component in the design system.</a>
+
+
+            <p> Copy the javascript and put it into your <code markup="tt" class="language-javascript">routes.js</code> file.
+            <p>Make sure the form  <code markup="tt" class="language-javascript">action</code> in the HTML and name of the  <code markup="tt" class="language-javascript">function</code> are the same.
+        <pre>  <code markup="tt" class="language-javascript">
+
+//Checkboxes
+
+// Run this code when a form is submitted to 'about-children-answer'
+router.post('/about-children-answer', function (req, res) {
+// Make a variable and give it the value from 'howmanychildren'
+var howmanychildren = req.session.data['nochildren']
+// Check whether the variable matches a condition
+if (howmanychildren == "no-children"){
+  // Send user to next page
+  res.redirect('/private-beta/v2/bereavement-support-payment/nochildren-not-eligible')
+} else {
+  // Send user to ineligible page
+  res.redirect('/private-beta/v2/bereavement-support-payment/country')
+}
+})
+        </code>
+      </pre>
+        </div>
+      </details>
+    </div>
+  </div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script type="text/javascript">
+  hjjs.highlightAll();
+</script>
+{% endblock %}
