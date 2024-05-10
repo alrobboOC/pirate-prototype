@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Check-in complete
+          </h1>
+          <div class="govuk-panel__body">
+            Your selected prison is<br><strong>Pirate Island</strong>
+          </div>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+          Your guard will arrange transport on the next available prison ship. Until then you will be help at this location. 
+        </p>
+        <p class="govuk-body">
+          Please don't try to escape as we're very short staffed at the moment.
+        </p>
+
+        <div class="govuk-form-group">
+          <button type="submit" class="govuk-button">
+            Finish
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

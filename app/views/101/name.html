@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Text input page
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="rank" method="post">
+      <form class="form" method="post">
+
 
         <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper">
@@ -27,12 +28,14 @@
           <div id="name-hint" class="govuk-hint">
             Your pirate name, me hearties!
           </div>
-          <input class="govuk-input" id="name" name="name" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="name" name="name" type="text">
         </div>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-form-uk"></div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </div>
 
       </form>
 

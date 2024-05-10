@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  Check your answers page
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,8 +15,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">
-        Check your answers before sending your application
+      <h1 class="govuk-heading-l">
+        Check your answers
       </h1>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -29,7 +29,7 @@
                 {{data['name']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/name">
+                <a class="govuk-link" href="name">
                   Change<span class="govuk-visually-hidden"> name</span>
                 </a>
               </dd>
@@ -43,7 +43,7 @@
                 {{data['rank']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/rank">
+                <a class="govuk-link" href="rank">
                   Change<span class="govuk-visually-hidden"> rank</span>
                 </a>
               </dd>
@@ -57,7 +57,7 @@
                 {{data['beard']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/beard">
+                <a class="govuk-link" href="beard">
                   Change<span class="govuk-visually-hidden"> has a beard</span>
                 </a>
               </dd>
@@ -71,7 +71,7 @@
                 {{data['crime']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/crimes">
+                <a class="govuk-link" href="crimes">
                   Change<span class="govuk-visually-hidden"> crimes</span>
                 </a>
               </dd>
@@ -79,18 +79,20 @@
           </dl>
 
       <h2 class="govuk-heading-m">
-        Now send your application
+        Submit your details
       </h2>
 
       <p>
         By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
       </p>
 
-      <form action="/confirmation" method="post" novalidate>
+      <form  method="post">
 
-        {{ govukButton({
-          text: "Accept and send"
-        }) }}
+        <div class="govuk-form-uk">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Submit
+          </button>
+        </div>
 
       </form>
 

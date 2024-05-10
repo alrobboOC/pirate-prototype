@@ -9,5 +9,4 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 
-router.use('/verison-1/', require('./views/verison-1/_routes'));
-router.use('/verison-2/', require('./views/verison-2/_routes'));
+router.use('/101/', require('./views/101/_routes'));

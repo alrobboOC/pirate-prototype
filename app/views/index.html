@@ -7,20 +7,49 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
-<a href="verison-1/start.html">Start page verison 1</a>
-
-<hr>
+    <span class="govuk-caption-l">Prototype Training</span>
+    <h1 class="govuk-heading-l">Pirate prototype tutorial</h1>
 
 
-<a href="verison-2/start.html">Start page verison 2</a>
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3">
+              Prototyping 101 - Basic working example
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-with-summary-sections-heading-3">
 
-  </div>
+          <div class="app-most-recent">
+            <strong class="govuk-tag govuk-tag--blue ">html coded example</strong>
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">A working example of the basic pirate prototype tutorial</h2>
+            <p class="govuk-body">This example will take you through the basics of prototyping. It contains examples of:</p>
+            <ol class="govuk-list govuk-list--bullet">
+              <li>a start page</li>
+              <li>text based questions</li>
+              <li>radio button questions</li>
+              <li>checkbox questions</li>
+              <li>a check your answers page</li>
+              <li>a confirmation page</li>
+              <li>using data you've captured</li>
+              <li>basic routing</li>
+              <li>routing using logic</li>
+              <li>using data you've captured</li>
+            </ol>
+
+            
+            <a href="/101/start" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Pirate prototype
+            </a>
+          
+          </div>
+        </div>
+
+      </div>
+    </div>
 </div>
 
 {% endblock %}
