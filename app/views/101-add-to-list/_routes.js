@@ -47,10 +47,21 @@ router.post('/crimes', function(request, response) {
   response.redirect('check-answers');
 })
 
-router.post('/check-answers', function(request, response) {
-  // once the page is posted (submitted) we move to the next page
-  response.redirect('confirmation');
-})
+// router.post('/check-answers', function(request, response) {
+//   // once the page is posted (submitted) we move to the next page
+//   response.redirect('confirmation');
+// })
+
+router.post('/check-answers', function(request, response) { 
+let temporaryArray = []
+if(request.session.data['people']){
+  temporaryArray = request.session.data['people']; 
+}
+let temporaryObject = {name: request.session.data['name'], rank: request.session.data['rank'], beard: request.session.data['beard'], crime: request.session.data['crime']};
+temporaryArray.push(temporaryObject);
+request.session.data['people'] = temporaryArray;
+response.redirect("add-another");
+});
 
 router.post('/confirmation', function(request, response) {
   // once the page is posted (submitted) we move to the next page
