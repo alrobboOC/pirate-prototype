@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You need a fake beard
+      </h1>
+
+      <p>
+        The officer presents you with a fake bushy beard. It is both great and big. You can't be a pirate in prison without one!
+      </p>
+
+    </div>
+  </div>
+
+  <div class="govuk-form-uk">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+  </div>
+
+</form>
+
+{% endblock %}
