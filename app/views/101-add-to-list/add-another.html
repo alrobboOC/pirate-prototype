@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-You have added {{ data['people'].length| plural("person") }}
+You have added {{ data['people'].length }} {{ "person" | plural(data['people'].length) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,7 @@ You have added {{ data['people'].length| plural("person") }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">People who live with you</span>
-     <h1 class="govuk-heading-l">You have added {{ data['people'].length| plural("person") }}</h1> 
+     <h1 class="govuk-heading-l">You have added {{ data['people'].length }} {{ "person" | plural(data['people'].length) }}</h1> 
      
      <div class="govuk-form-group">
       <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
@@ -42,7 +42,7 @@ You have added {{ data['people'].length| plural("person") }}
         </a>
         <a href="name" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Add another
-        </a
+        </a>
       </div>
       {% else %}
       <form method="post">
