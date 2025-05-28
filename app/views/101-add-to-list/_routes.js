@@ -63,6 +63,15 @@ request.session.data['people'] = temporaryArray;
 response.redirect("add-another");
 });
 
+router.post('/add-another', function(request, response) {
+    if(request.session.data['addAnother']=='yes'){
+        response.redirect("name");
+    }
+    else{
+        response.redirect("confirmation");
+    }
+});
+
 router.post('/confirmation', function(request, response) {
   // once the page is posted (submitted) we move to the next page
   response.redirect('/index');
